@@ -1,3 +1,35 @@
-.nav-custom{
-    background: green;
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+    font-family: "Goblin One", cursive;
+}
+
+p,
+.p {
+    font-family: "Noto Serif", serif;
+}
+
+:root {
+    --verdone: rgb(56, 102, 65);
+    --verde: rgb(106, 153, 78);
+    --panna: rgb(242, 232, 207);
+    --mattone: rgb(188, 71, 73);
+}
+
+
+
+
+
+.nav-custom {
+    background-color: var(--verdone);
+    color: var(--panna);
+}
+
+.nav-link {
+    color: var(--panna);
 }
