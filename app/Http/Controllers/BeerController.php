@@ -9,4 +9,8 @@ class BeerController extends Controller
     public function home(){
         return view('welcome');
     }
+
+    public function index(){
+        return view("beers.index");
+    }
 }
