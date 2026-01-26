@@ -1,7 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeerController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BeerController::class, 'home'])->name('home');
