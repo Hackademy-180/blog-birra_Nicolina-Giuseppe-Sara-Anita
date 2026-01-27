@@ -4,7 +4,7 @@
     <main class="container">
         <section class="row justify-content-center mt-5">
             <article class="col-12 col-md-6 text-center">
-                <form method="POST" action="" enctype="multipart/form-data">
+                <form method="POST" action="{{route("beer_add")}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome:</label>
@@ -25,7 +25,9 @@
                      <div class="mb-3">
                         <label for="img" class="form-label">Immagine:</label>
                         <input type="file" class="form-control" id="img" placeholder="" name="img">
-                        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                         <x-button class="mt-5"/>
                     </div>
                 </form>
             </article>

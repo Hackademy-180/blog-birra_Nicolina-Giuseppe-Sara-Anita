@@ -6,19 +6,19 @@ h4,
 .h2,
 .h3,
 .h4 {
-    font-family: "Goblin One", cursive;
+  font-family: "Goblin One", cursive;
 }
 
 p,
 .p {
-    font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", serif;
 }
 
 :root {
-    --verdone: rgb(56, 102, 65);
-    --verde: rgb(106, 153, 78);
-    --panna: rgb(242, 232, 207);
-    --mattone: rgb(188, 71, 73);
+  --verdone: rgb(56, 102, 65);
+  --verde: rgb(106, 153, 78);
+  --panna: rgb(242, 232, 207);
+  --mattone: rgb(188, 71, 73);
 }
 
 
@@ -26,12 +26,16 @@ p,
 
 
 .nav-custom {
-    background-color: var(--verdone);
-    color: var(--panna);
+  background-color: var(--verdone);
+  color: var(--panna);
 }
 
 .nav-link {
-    color: var(--panna);
+  color: var(--panna);
+}
+
+.logo {
+  width: 4%;
 }
 
 /* Video header startboostrap */
@@ -74,4 +78,41 @@ header .overlay {
   background-color: black;
   opacity: 0.5;
   z-index: 1;
+}
+
+
+
+
+/*bottone esterno create birra*/
+button {
+  border: 0;
+  background: var(--panna);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  padding: 1em 1em 1em 3em;
+  position: relative;
+  overflow: hidden;
+  font-size: 17px;
+  font-family: inherit;
+  border-radius: 12px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+button svg {
+  position: absolute;
+  left: 0.4em;
+  width: 40px;
+  height: 40px;
+  transform: rotateY(-180deg);
+  transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+button:hover svg {
+  transform: rotateY(-180deg) translateX(-0.25em);
+}
+
+button:active {
+  transform: scale(0.98);
 }

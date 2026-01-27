@@ -30,7 +30,7 @@ class BeerController extends Controller
             'brewery' => $request->brewery,
             'style' => $request->style,
             'info' => $request->info,
-            "img"=>$request->file("img")?$request->file("img")->store("image", "public"):"/media/default.jpg",
+            "img" => $request->file("img") ? $request->file("img")->store("image", "public") : "/media/default.jpg",
             "user_id" => Auth::user()->id,
         ]);
         return redirect(route("beer_index"))->with("status", "Birra creata correttamente!");
@@ -38,13 +38,13 @@ class BeerController extends Controller
 
     public function detail(Beer $beer)
     {
-        return view("beers.detail", compact('beer'));
+        return view("beers.detail", compact('beers'));
     }
 
 
 
     public function edit()
     {
-        return view("beers.edit", compact('beer'));
+        return view("beers.edit", compact('beers'));
     }
 }

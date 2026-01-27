@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('beers', function (Blueprint $table) {
-            $table->string("img")->default("/media/defoult.jpg");
+            $table->string("img")->default("/media/default.jpg");
         });
     }
 
