@@ -11,3 +11,5 @@ Route::get("/beer/detail/{beer}", [BeerController::class, "detail"])->name("beer
 Route::get("/beer/edit/{beer}", [BeerController::class, "edit"])->name("beer_edit");
 Route::put("/beer/update/{beer}", [BeerController::class, "update"])->name("beer_update");
 Route::delete("/beer/destroy/{beer}", [BeerController::class, "destroy"])->name("beer_destroy");
+// form lavora con noi
+Route::get("/beers/lavora-con-noi", [BeerController::class, "lavora"])->name("beer_lavora");

@@ -63,4 +63,8 @@ class BeerController extends Controller
         $beer->delete();
         return redirect(route('beer_index'));
     }
+
+    public function lavora(){
+        return view("lavora.lavora-con-noi");
+    }
 }
