@@ -31,7 +31,7 @@
             <li >
               <form action="{{route ("logout")}}" method="POST">
                 @csrf
-                <button class="dropdown-items trash" type="submit"><i class="fa-solid fa-arrow-right-from-bracket">Logout</i></button>
+                <button class="dropdown-items trash" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
 
               </form>
             </li>
