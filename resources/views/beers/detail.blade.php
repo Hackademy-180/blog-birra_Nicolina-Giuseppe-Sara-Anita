@@ -4,25 +4,27 @@
         <section class="row">
             <article class="col-12 col-md-6 text-center">
                 <p class="lead">
-                    <strong>Nuovo Nome:</strong>
+                    <strong>Nome:</strong>
                 </p>
                 <p class="lead">
-                    <strong>Nuovo Birrificio:</strong>
+                    <strong>Birrificio:</strong>
                 </p>
                 <p class="lead">
-                    <strong>Nuovo Stile:</strong>
+                    <strong>Stile:</strong>
                 </p>
                 <p class="lead">
-                    <strong>Nuova Descrizione:</strong>
+                    <strong>Descrizione:</strong>
                 </p>
                 <p class="lead">
-                    <strong>Nuovo Immagine:</strong>
+                    <strong>Immagine:</strong>
                 </p>
                 <p class="lead">
                     <strong>Creato da:</strong>
                 </p>
+                @if(Auth::id()== $beer->user->id)
                 <a href="" class="btn btn-warning">Modifica</a>
                 <a href="" class="btn btn-warning">Tutte le birre</a>
+                @endif
             </article>
         </section>
     </main>

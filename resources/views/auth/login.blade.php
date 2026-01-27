@@ -3,11 +3,11 @@
     <main class="container">
         <section class="row wh-75 justify-content-center mt-5">
             <article class="col-12 col-md-8">
-                <form methot="POST" action="{{route('login')}}">
+                <form method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3">
-                        <label for="mail" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="mail" placeholder="mario@rossi.com" name="mail">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="mario@rossi.com" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="col-sm-2 col-form-label">Password:</label>
@@ -16,10 +16,19 @@
                         </div>
                     </div>
                     <div class="col-auto d-flex justify-content-end">
-                       <button type="submit" class="btn btn-warning mb-3">Login</button>
+                        <button type="submit" class="btn btn-warning mb-3">Login</button>
                     </div>
                 </form>
             </article>
         </section>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </main>
 </x-layout>

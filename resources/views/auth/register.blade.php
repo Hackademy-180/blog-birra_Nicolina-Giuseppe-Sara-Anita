@@ -10,8 +10,8 @@
                         <input type="text" class="form-control" id="name" name="name">
                     </div>
                      <div class="mb-3">
-                        <label for="mail" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="mail" placeholder="mario@rossi.com" name="mail">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="mario@rossi.com" name="email">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="col-sm-2 col-form-label">Password:</label>
@@ -22,7 +22,7 @@
                     <div class="mb-3">
                         <label for="confirmpassword" class="col-sm-2 col-form-label">Conferma Password:</label>
                         <div class="">
-                            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword">
+                            <input type="password" class="form-control" id="confirmpassword" name="password_confirmation">
                         </div>
                     </div>
                     <div class="col-auto d-flex justify-content-end">
@@ -32,4 +32,13 @@
             </article>
         </section>
     </main>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </x-layout>

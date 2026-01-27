@@ -1,5 +1,9 @@
 <x-layout>
-    <
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
     <h1 class=" text-center mt-3" >Aggiungi la tua birra preferita</h1>
     <main class="container">
         <section class="row justify-content-center mt-5">
