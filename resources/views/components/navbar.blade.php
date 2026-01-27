@@ -23,8 +23,8 @@
             <i class="fa-regular fa-user"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">Registrati</a></li>
+            <li><a class="dropdown-item" href="{{route('login')}}">Login<i class="fa-regular fa-user icon-right"></i></a></li>
+            <li><a class="dropdown-item" href="{{route('register')}}">Registrati<i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>

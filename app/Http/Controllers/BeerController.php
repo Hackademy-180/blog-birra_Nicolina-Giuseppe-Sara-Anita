@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Beer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BeerController extends Controller
 {
@@ -29,7 +30,8 @@ class BeerController extends Controller
             'brewery' => $request->brewery,
             'style' => $request->style,
             'info' => $request->info,
-            "img"=>$request->file("img")?$request->file("img")->store("image", "public"):"/media/default.jpg"
+            "img"=>$request->file("img")?$request->file("img")->store("image", "public"):"/media/default.jpg",
+            "user_id" => Auth::user()->id,
         ]);
         return redirect(route("beer_index"))->with("status", "Birra creata correttamente!");
     }
