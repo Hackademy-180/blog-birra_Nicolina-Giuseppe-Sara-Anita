@@ -29,7 +29,9 @@ class BeerController extends Controller
             'brewery' => $request->brewery,
             'style' => $request->style,
             'info' => $request->info,
+            "img"=>$request->file("img")?$request->file("img")->store("image", "public"):"/media/default.jpg"
         ]);
+        return redirect(route("beer_index"))->with("status", "Birra creata correttamente!");
     }
 
     public function detail(Beer $beer)
