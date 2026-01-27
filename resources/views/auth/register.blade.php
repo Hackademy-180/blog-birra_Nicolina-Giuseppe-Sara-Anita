@@ -7,7 +7,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="name" name="mail">
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                      <div class="mb-3">
                         <label for="mail" class="form-label">Email:</label>
