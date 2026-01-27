@@ -12,6 +12,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route("beer_index")}}">Recensioni</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{route ("beer_create")}}">carica la tua birra </a>
+      </li>
          <li class="nav-item">
           <a class="nav-link" href="#">Lavora con noi</a>
         </li>
@@ -28,7 +31,7 @@
         </li>
       
       </ul>
-      <img src="{{asset('storage/media/logo.png') }}" alt="" class="logo">
+      <img src="{{asset('storage/app/public/media/logo.png') }}" alt="" class="logo">
       <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>

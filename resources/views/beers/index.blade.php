@@ -4,9 +4,9 @@
             <article class="col-12 text-center">
                 <h1 class="">le nostre recensioni</h1>
             </article>
-            {{-- @foreach ($songs as $song)
+            {{-- @foreach ($beers as $beer)
                 <article class="col-12 col-md-3">
-                    <x-song-card :song="$song"/>
+                    <x-beer-card :beer="$beer"/>
                 </article>    
             @endforeach --}}
         </section>

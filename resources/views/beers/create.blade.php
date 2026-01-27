@@ -1,7 +1,8 @@
 <x-layout>
-    <h1>Aggiungi la tua birra preferita</h1>
+    <
+    <h1 class=" text-center mt-3" >Aggiungi la tua birra preferita</h1>
     <main class="container">
-        <section class="row justify-content-center ">
+        <section class="row justify-content-center mt-5">
             <article class="col-12 col-md-6 text-center">
                 <form method="POST" action="" enctype="multipart/form-data">
                     @csrf
@@ -23,7 +24,8 @@
                     </div>
                      <div class="mb-3">
                         <label for="img" class="form-label">Immagine:</label>
-                        <input type="form-control" class="form-control" id="img" placeholder="" name="img">
+                        <input type="file" class="form-control" id="img" placeholder="" name="img">
+                        <button type="submit" class="btn btn-primary mt-4">Submit</button>
                     </div>
                 </form>
             </article>
