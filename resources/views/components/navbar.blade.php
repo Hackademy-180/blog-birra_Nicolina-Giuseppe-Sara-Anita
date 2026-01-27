@@ -13,7 +13,7 @@
           <a class="nav-link" href="{{route("beer_index")}}">Recensioni</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="{{route ("beer_create")}}">carica la tua birra </a>
+        <a class="nav-link" href="{{route ("beer_create")}}">Carica la tua birra </a>
       </li>
          <li class="nav-item">
           <a class="nav-link" href="#">Lavora con noi</a>

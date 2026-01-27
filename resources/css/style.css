@@ -116,3 +116,8 @@ button:hover svg {
 button:active {
   transform: scale(0.98);
 }
+
+/* Button trash */
+.trash{
+  background: none;
+}

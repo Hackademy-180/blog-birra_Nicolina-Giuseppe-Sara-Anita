@@ -9,3 +9,5 @@ Route::get("/beers/create", [BeerController::class, "create"])->name("beer_creat
 Route::post("/beer/add", [BeerController::class, "add"])->name("beer_add");
 Route::get("/beer/detail/{beer}", [BeerController::class, "detail"])->name("beer_detail");
 Route::get("/beer/edit/{beer}", [BeerController::class, "edit"])->name("beer_edit");
+Route::get("/beer/update/{beer}", [BeerController::class, "update"])->name("beer_update");
+Route::get("/beer/destroy/{beer}", [BeerController::class, "destroy"])->name("beer_destroy");

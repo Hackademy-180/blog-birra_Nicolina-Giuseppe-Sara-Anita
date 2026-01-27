@@ -25,26 +25,42 @@ class BeerController extends Controller
     }
     public function add(Request $request)
     {
-        $beer = Beer::create([
+        Beer::create([
             'name' => $request->name,
             'brewery' => $request->brewery,
             'style' => $request->style,
             'info' => $request->info,
             "img" => $request->file("img") ? $request->file("img")->store("image", "public") : "/media/default.jpg",
-            "user_id" => Auth::user()->id,
+            // "user_id" => Auth::user()->id,
         ]);
         return redirect(route("beer_index"))->with("status", "Birra creata correttamente!");
     }
 
     public function detail(Beer $beer)
     {
-        return view("beers.detail", compact('beers'));
+        return view("beers.detail", compact('beer'));
     }
 
 
 
     public function edit()
     {
-        return view("beers.edit", compact('beers'));
+        return view("beers.edit", compact('beer'));
+    }
+
+    public function update(Beer $beer, Request $request){
+        $beer->update([
+            'name' => $request->name,
+            'brewery' => $request->brewery,
+            'style' => $request->style,
+            'info' => $request->info,
+            "img" => $request->file("img") ? $request->file("img")->store("image", "public") : "/media/default.jpg",
+        ]);
+        return redirect(route("beer_detail", compact('beer')));
+
+    }
+    public function destroy(Beer $beer){
+        $beer->delete();
+        return redirect(route('beer_index'));
     }
 }
