@@ -12,25 +12,35 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route("beer_index")}}">Recensioni</a>
         </li>
+        @auth
         <li class="nav-item">
         <a class="nav-link" href="{{route ("beer_create")}}">Carica la tua birra </a>
       </li>
          <li class="nav-item">
           <a class="nav-link" href="#">Lavora con noi</a>
         </li>
+        @else
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-regular fa-user"></i>
           </a>
+        
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{route('login')}}">Login<i class="fa-regular fa-user icon-right"></i></a></li>
             <li><a class="dropdown-item" href="{{route('register')}}">Registrati<i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li >
+              <form action="{{route ("logout")}}" method="POST">
+                @csrf
+                <button class="dropdown-items trash" type="submit"><i class="fa-solid fa-arrow-right-from-bracket">Logout</i></button>
+
+              </form>
+            </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-      
+      @endauth
       </ul>
+      
       <img src="{{asset('storage/media/logo.jpg') }}" alt="" class="logo">
       <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
