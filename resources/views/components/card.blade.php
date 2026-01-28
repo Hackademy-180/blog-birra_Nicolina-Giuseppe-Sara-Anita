@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mt-5">
   <img src="{{Storage::url($beer->img)}}" class="card-img-top" alt="...">
   <div class="card-body text-center">
     <h4 class="card-title text-center">{{$beer->name}}</h4>

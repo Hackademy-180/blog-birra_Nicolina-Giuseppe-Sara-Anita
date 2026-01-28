@@ -24,7 +24,7 @@
                 </p>
                 @endforeach
                 @if(Auth::id()== $beer->user->id)
-                <a href="{{route('beer_edit')}}" class="btn btn-warning">Modifica</a>
+                <a href="{{route('beer_edit', compact('beer'))}}" class="btn btn-warning">Modifica</a>
                 <a href="{{route('beer_index')}}" class="btn btn-warning">Tutte le birre</a>
                 @endif
             </article>

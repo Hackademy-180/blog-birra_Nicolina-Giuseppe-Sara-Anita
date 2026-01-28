@@ -18,7 +18,7 @@ p,
   --verdone: rgb(56, 102, 65);
   --verde: rgb(106, 153, 78);
   --panna: rgb(242, 232, 207);
-  --mattone: rgb(188, 71, 73);
+  --mattone: rgb(216, 63, 65);
 }
 
 
@@ -120,4 +120,8 @@ button:active {
 /* Button trash */
 .trash{
   background: none;
+}
+
+.card-title{
+  color: var(--mattone);
 }

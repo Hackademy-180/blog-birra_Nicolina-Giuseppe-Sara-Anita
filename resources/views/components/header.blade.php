@@ -4,7 +4,7 @@
     <div class="overlay"></div>
 
     <!-- The HTML5 video element that will create the background video on the header -->
-    <video autoplay muted loop playsinline controls autoplay="autoplay" muted="muted" loop="loop">
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
         <source src="{{asset('/media/headervideo.mp4')}}" type="video/mp4">
     </video>
 

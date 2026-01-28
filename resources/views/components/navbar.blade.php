@@ -16,9 +16,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route ('beer_create')}}">Carica la tua birra </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('beer_lavora')}}">Lavora con noi</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Benvenut*
             <i class="fa-regular fa-user"></i> {{Auth::user()->name}}
@@ -34,6 +32,9 @@
           </ul>
         </li>
         @else
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('beer_lavora')}}">Lavora con noi</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Benvenut*
             <i class="fa-regular fa-user"></i>

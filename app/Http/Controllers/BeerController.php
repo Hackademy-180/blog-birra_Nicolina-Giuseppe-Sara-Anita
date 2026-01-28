@@ -50,10 +50,10 @@ class BeerController extends Controller
 
 
 
-    public function edit()
+    public function edit(Beer $beer)
     {
         $categories= Category::all();
-        return view("beers.edit", compact('beer'));
+        return view("beers.edit", compact('beer', 'categories'));
     }
 
     public function update(Beer $beer, Request $request)
