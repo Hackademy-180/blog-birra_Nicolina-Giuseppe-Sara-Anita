@@ -16,8 +16,13 @@
                     <strong class="fw-bold">Descrizione: </strong>{{$beer->info}}
                 </p>
                 <p class="lead">
-                    <strong class="fw-bold">Creato da: </strong>
+                    <strong class="fw-bold">Creato da: </strong>{{$beer->user->name}}
                 </p>
+                @foreach($beer->categories as $category)
+                 <p class="lead">
+                    <strong class="fw-bold">Categoria: </strong>{{$category->name}}
+                </p>
+                @endforeach
                 @if(Auth::id()== $beer->user->id)
                 <a href="{{route('beer_edit')}}" class="btn btn-warning">Modifica</a>
                 <a href="{{route('beer_index')}}" class="btn btn-warning">Tutte le birre</a>

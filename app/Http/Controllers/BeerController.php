@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BeerRequest;
 use App\Models\Beer;
+use App\Models\Category;
 use App\Mail\ContactMail;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BeerRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -25,11 +26,12 @@ class BeerController extends Controller
 
     public function create()
     {
-        return view("beers.create");
+        $categories= Category::all();
+        return view("beers.create", compact('categories'));
     }
     public function add(BeerRequest $request)
     {
-        Beer::create([
+        $beer= Beer::create([
             'name' => $request->name,
             'brewery' => $request->brewery,
             'style' => $request->style,
@@ -37,6 +39,7 @@ class BeerController extends Controller
             "img" => $request->file("img") ? $request->file("img")->store("image", "public") : "/media/default.jpg",
             "user_id" => Auth::user()->id,
         ]);
+        $beer->categories()->attach($request->categories);
         return redirect(route("beer_index"))->with("status", "Birra creata correttamente!");
     }
 
@@ -49,6 +52,7 @@ class BeerController extends Controller
 
     public function edit()
     {
+        $categories= Category::all();
         return view("beers.edit", compact('beer'));
     }
 
@@ -61,10 +65,13 @@ class BeerController extends Controller
             'info' => $request->info,
             "img" => $request->file("img") ? $request->file("img")->store("image", "public") : "/media/default.jpg",
         ]);
+        $beer->categories()->detach();
+        $beer->categories()->attach($request->categories);
         return redirect(route("beer_detail", compact('beer')));
     }
     public function destroy(Beer $beer)
     {
+        $beer->categories()->detach();
         $beer->delete();
         return redirect(route('beer_index'));
     }

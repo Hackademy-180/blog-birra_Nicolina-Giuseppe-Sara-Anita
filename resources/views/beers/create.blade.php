@@ -42,6 +42,15 @@
                         <label for="img" class="form-label">Immagine:</label>
                         <input type="file" class="form-control" id="img" placeholder="" name="img">
                     </div>
+                     <div class="mb-3">
+                        <p>Categorie:</p>
+                        @foreach($categories as $category)
+                        <div class="gap-2">
+                            <label for="{{$category->id}}" class="form-check-label">{{$category->name}}</label>
+                            <input type="checkbox" class="form-check-input" value='{{$category->id}}'id="{{$category->id}}" name="categories[]">
+                        </div>
+                        @endforeach
+                    </div>
                     <div class="d-flex justify-content-center">
                          <x-button class="mt-5"/>
                     </div>
