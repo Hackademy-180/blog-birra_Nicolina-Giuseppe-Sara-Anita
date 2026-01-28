@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beer;
+use App\Mail\ContactMail;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BeerController extends Controller
 {
@@ -67,4 +70,13 @@ class BeerController extends Controller
     public function lavora(){
         return view("lavora.lavora-con-noi");
     }
+    public function send(Request $request){
+        $name=$request->name;
+        $email=$request->email;
+        $mex=$request->mex;
+        Mail::to($email)->send(new ContactMail($name, $email, $mex));
+        
+        return redirect(route("home"))->with("message", "mail inviata con successo");
+    }
+    
 }

@@ -13,3 +13,4 @@ Route::put("/beer/update/{beer}", [BeerController::class, "update"])->name("beer
 Route::delete("/beer/destroy/{beer}", [BeerController::class, "destroy"])->name("beer_destroy");
 // form lavora con noi
 Route::get("/beers/lavora-con-noi", [BeerController::class, "lavora"])->name("beer_lavora");
+Route::post("/send", [BeerController::class, "send"])->name("send_email");

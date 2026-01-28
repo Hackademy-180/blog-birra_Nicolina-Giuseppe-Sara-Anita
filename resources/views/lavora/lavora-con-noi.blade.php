@@ -3,7 +3,7 @@
     <main class="container">
         <section class="row wh-75 justify-content-center mt-5">
             <article class="col-12 col-md-8">
-                <form method="POST" action="">
+                <form method="POST" action="{{route("send_email")}}">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
