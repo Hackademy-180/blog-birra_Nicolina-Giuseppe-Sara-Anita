@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BeerRequest;
 use App\Models\Beer;
 use App\Mail\ContactMail;
 
@@ -26,7 +27,7 @@ class BeerController extends Controller
     {
         return view("beers.create");
     }
-    public function add(Request $request)
+    public function add(BeerRequest $request)
     {
         Beer::create([
             'name' => $request->name,
@@ -51,7 +52,8 @@ class BeerController extends Controller
         return view("beers.edit", compact('beer'));
     }
 
-    public function update(Beer $beer, Request $request){
+    public function update(Beer $beer, Request $request)
+    {
         $beer->update([
             'name' => $request->name,
             'brewery' => $request->brewery,
@@ -60,23 +62,24 @@ class BeerController extends Controller
             "img" => $request->file("img") ? $request->file("img")->store("image", "public") : "/media/default.jpg",
         ]);
         return redirect(route("beer_detail", compact('beer')));
-
     }
-    public function destroy(Beer $beer){
+    public function destroy(Beer $beer)
+    {
         $beer->delete();
         return redirect(route('beer_index'));
     }
 
-    public function lavora(){
+    public function lavora()
+    {
         return view("lavora.lavora-con-noi");
     }
-    public function send(Request $request){
-        $name=$request->name;
-        $email=$request->email;
-        $mex=$request->mex;
+    public function send(Request $request)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $mex = $request->mex;
         Mail::to($email)->send(new ContactMail($name, $email, $mex));
-        
+
         return redirect(route("home"))->with("message", "mail inviata con successo");
     }
-    
 }
